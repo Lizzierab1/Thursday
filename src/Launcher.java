@@ -7,7 +7,11 @@ public class Launcher {
     public static void main(String[] args) {
         int attendees = 0;
         while (true) {
-            System.out.println("Next Thursday is May 7th. " + attendees + " People attending");
+            if (attendees == 1) {
+                System.out.println("Next Thursday is May 7th. " + attendees + " Person attending");
+            } else {
+                System.out.println("Next Thursday is May 7th. " + attendees + " People attending");
+            }
 
             System.out.print("Are you coming on Thursday? ");
 
