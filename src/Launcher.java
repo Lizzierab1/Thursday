@@ -25,6 +25,9 @@ public class Launcher {
             if (response.equals("yes")) {
                 attendees.add(name);
                 System.out.println("Awesome! See you then! People now attending are: " + attendees);
+            } else if (response.equals("no")){
+                attendees.remove(name);
+                System.out.println("That's a shame, you fail. People now attending are: " + attendees);
             }
 
         }
