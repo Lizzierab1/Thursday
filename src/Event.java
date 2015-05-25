@@ -1,25 +1,34 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/*
  * Created by Lizzie on 20/05/2015.
  */
-public class Event {
+class Event {
      List<String> attendees = new ArrayList<>();
+    List<String> invitees;
+
+    Event(List<String> invitees) {
+
+        this.invitees = invitees;
+    }
 
 
     void confirmAttendance (String name) {
-        attendees.add(name);
+        if (invitees.contains(name)){
+            attendees.add(name);
+        }
+
 
     }
 
-    public List<String> attendees() {
+    List<String> attendees() {
         return attendees;
     }
 
 
-    public String state() {
-           if (attendees.size() <3) {
+    String state() {
+           if (attendees.size() < invitees.size()) {
                return "unconfirmed";
            } else {
                return "confirmed";
